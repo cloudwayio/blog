@@ -9,11 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categories -- cloudway</title>
+    <title> -- cloudway</title>
 
-    
-    <link href="http://cloudway.io/categories/index.xml" rel="alternate" type="application/rss+xml" title="cloudway" />
-    <link href="http://cloudway.io/categories/index.xml" rel="feed" type="application/rss+xml" title="cloudway" />
     
 
     
@@ -71,35 +68,87 @@
 
 
     
-    <header class="intro-header" style="background-image: url('http://cloudway.io/img/home-bg.jpg')">
-     <div class="container">
-       <div class="row">
-         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-           <div class="site-heading">
-             <h1>Categories</h1>
-             <hr class="small">
-             <span class="subheading">Categories</span>
+    
+    <header class="intro-header" style="background-image: url('http://cloudway.io/img/post-bg.jpg')">
+    
+      <div class="container">
+        <div class="row">
+           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             <div class="post-heading">
+               <h1></h1>
+               <h2 class="subheading"></h2>
+               <span class="meta">Posted by <a href="#">Oz Akan</a> on Mon, Jan 1, 0001
+                 <br />
+                 In 
+
+                 <br />
+                 Tags 
+
+               </span>
+             </div>
            </div>
-         </div>
-       </div>
-     </div>
+        </div>
+      </div>
     </header>
 
     
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <ul>
-            
-            
-            <li><a href="http://cloudway.io/categories/aws">Aws</a> 2</li>
-            
-            <li><a href="http://cloudway.io/categories/go">Go</a> 1</li>
-            
-          </ul>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  
+
+<p>##fs.readFile(filename[, options], callback)#</p>
+
+<ul>
+<li>filename String</li>
+<li>options Object | String
+
+<ul>
+<li>encoding String | Null default = null</li>
+<li>flag String default = &lsquo;r&rsquo;</li>
+</ul></li>
+<li>callback Function</li>
+</ul>
+
+<p>Asynchronously reads the entire contents of a file. Example:</p>
+
+<pre><code>fs.readFile('/etc/passwd', function (err, data) {
+    if (err) throw err;
+    console.log(data);
+});
+</code></pre>
+
+<h2 id="so-lets-write-a-sync-function-first:46f39fea3c841ae0b78d33fc38d15748">So lets write a sync function first</h2>
+
+<pre><code>var fs = require(&quot;fs&quot;);
+
+console.log(&quot;Sync started&quot;);
+var data = fs.readFileSync('sample.txt');
+console.log(&quot;data: &quot;, data.toString());
+console.log(&quot;Sync ended&quot;);
+</code></pre>
+
+<p>Now let&rsquo;s convert this to an async function.</p>
+
+<pre><code>function printFile(err, data) {
+    if (err) return console.log(err);
+    console.log(&quot;- &quot;, data.toString());
+};
+
+console.log(&quot;Async started&quot;);
+fs.readFile('sample.txt', printFile);
+console.log(&quot;Async ended&quot;);
+</code></pre>
+
+<p>ok.</p>
+
+<p>fs.readFile opens the file and when content is read if there is error it passes to the callback function as the first argument. If file is read without an error then it passes null as first argument and the data as second argument. That is why we implemented printFile function as seen.</p>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </article>
 
     <hr>
     
