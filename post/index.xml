@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cloudway</title>
-    <link>http://localhost:1313/post/</link>
+    <link>http://cloudway.io/post/</link>
     <description>Recent content in Posts on cloudway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
     <lastBuildDate>Mon, 12 Oct 2015 05:23:01 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://cloudway.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A Summary of AWS re:Invent 2015 Announcements</title>
-      <link>http://localhost:1313/post/aws-reinvent-2015-announcements/</link>
+      <link>http://cloudway.io/post/aws-reinvent-2015-announcements/</link>
       <pubDate>Mon, 12 Oct 2015 05:23:01 -0400</pubDate>
       
-      <guid>http://localhost:1313/post/aws-reinvent-2015-announcements/</guid>
+      <guid>http://cloudway.io/post/aws-reinvent-2015-announcements/</guid>
       <description>
 
 &lt;h1 id=&#34;aws-re-invent-2015-announcements:87b2ec0ce69d8227e6605a3dd984d738&#34;&gt;AWS re:Invent 2015 Announcements&lt;/h1&gt;
@@ -24,9 +24,9 @@
 
 &lt;h2 id=&#34;keynotes:87b2ec0ce69d8227e6605a3dd984d738&#34;&gt;Keynotes&lt;/h2&gt;
 
-&lt;p&gt;Day One : &lt;a href=&#34;https://www.youtube.com/embed/D5-ifl7KJ00?rel=0;hd=1;autoplay=1,&#34; title=&#34;Andy Jessy&#39;s Keynote&#34;&gt;Andy Jassy&amp;rsquo;s Keynote&lt;/a&gt; [1:53:31]&lt;/p&gt;
+&lt;p&gt;Day One: &lt;a href=&#34;https://www.youtube.com/embed/D5-ifl7KJ00?rel=0;hd=1;autoplay=1,&#34; title=&#34;Andy Jessy&#39;s Keynote&#34;&gt;Andy Jassy&amp;rsquo;s Keynote&lt;/a&gt; [1:53:31]&lt;/p&gt;
 
-&lt;p&gt;Day Two : &lt;a href=&#34;https://www.youtube.com/embed/y-0Wf2Zyi5Q?rel=0;hd=1;autoplay=1,&#34; title=&#34;Dr. Werner Vogels&#39;s Keynote&#34;&gt;Dr. Werner Vogels&amp;rsquo;s Keynote&lt;/a&gt; [1:34:22]&lt;/p&gt;
+&lt;p&gt;Day Two: &lt;a href=&#34;https://www.youtube.com/embed/y-0Wf2Zyi5Q?rel=0;hd=1;autoplay=1,&#34; title=&#34;Dr. Werner Vogels&#39;s Keynote&#34;&gt;Dr. Werner Vogels&amp;rsquo;s Keynote&lt;/a&gt; [1:34:22]&lt;/p&gt;
 
 &lt;p&gt;Here you can find &lt;a href=&#34;https://www.youtube.com/user/AmazonWebServices/Cloud&#34;&gt;all recordings&lt;/a&gt;.&lt;/p&gt;
 
@@ -74,10 +74,10 @@
     
     <item>
       <title>Hello World</title>
-      <link>http://localhost:1313/post/hello_world/</link>
+      <link>http://cloudway.io/post/hello_world/</link>
       <pubDate>Mon, 28 Sep 2015 23:23:01 -0400</pubDate>
       
-      <guid>http://localhost:1313/post/hello_world/</guid>
+      <guid>http://cloudway.io/post/hello_world/</guid>
       <description>
 
 &lt;h1 id=&#34;hello-world:a37038ea9c0a627175646a70bd3fc060&#34;&gt;Hello World&lt;/h1&gt;
