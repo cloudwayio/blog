@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on cloudway</title>
-    <link>http://cloudway.io/tags/aws/</link>
+    <link>http://localhost:1313/tags/aws/</link>
     <description>Recent content in Aws on cloudway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
     <lastBuildDate>Mon, 12 Oct 2015 05:23:01 -0400</lastBuildDate>
-    <atom:link href="http://cloudway.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A Summary of AWS re:Invent 2015 Announcements</title>
-      <link>http://cloudway.io/post/aws-reinvent-2015-announcements/</link>
+      <link>http://localhost:1313/post/aws-reinvent-2015-announcements/</link>
       <pubDate>Mon, 12 Oct 2015 05:23:01 -0400</pubDate>
       
-      <guid>http://cloudway.io/post/aws-reinvent-2015-announcements/</guid>
+      <guid>http://localhost:1313/post/aws-reinvent-2015-announcements/</guid>
       <description>
 
 &lt;h1 id=&#34;aws-re-invent-2015-announcements:87b2ec0ce69d8227e6605a3dd984d738&#34;&gt;AWS re:Invent 2015 Announcements&lt;/h1&gt;
@@ -74,10 +74,10 @@
     
     <item>
       <title>Hello World</title>
-      <link>http://cloudway.io/post/hello_world/</link>
+      <link>http://localhost:1313/post/hello_world/</link>
       <pubDate>Mon, 28 Sep 2015 23:23:01 -0400</pubDate>
       
-      <guid>http://cloudway.io/post/hello_world/</guid>
+      <guid>http://localhost:1313/post/hello_world/</guid>
       <description>
 
 &lt;h1 id=&#34;hello-world:a37038ea9c0a627175646a70bd3fc060&#34;&gt;Hello World&lt;/h1&gt;

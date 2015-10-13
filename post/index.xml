@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cloudway</title>
-    <link>http://cloudway.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on cloudway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
     <lastBuildDate>Mon, 12 Oct 2015 05:23:01 -0400</lastBuildDate>
-    <atom:link href="http://cloudway.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A Summary of AWS re:Invent 2015 Announcements</title>
-      <link>http://cloudway.io/post/aws-reinvent-2015-announcements/</link>
+      <link>http://localhost:1313/post/aws-reinvent-2015-announcements/</link>
       <pubDate>Mon, 12 Oct 2015 05:23:01 -0400</pubDate>
       
-      <guid>http://cloudway.io/post/aws-reinvent-2015-announcements/</guid>
+      <guid>http://localhost:1313/post/aws-reinvent-2015-announcements/</guid>
       <description>
 
 &lt;h1 id=&#34;aws-re-invent-2015-announcements:87b2ec0ce69d8227e6605a3dd984d738&#34;&gt;AWS re:Invent 2015 Announcements&lt;/h1&gt;
@@ -74,10 +74,10 @@
     
     <item>
       <title>Hello World</title>
-      <link>http://cloudway.io/post/hello_world/</link>
+      <link>http://localhost:1313/post/hello_world/</link>
       <pubDate>Mon, 28 Sep 2015 23:23:01 -0400</pubDate>
       
-      <guid>http://cloudway.io/post/hello_world/</guid>
+      <guid>http://localhost:1313/post/hello_world/</guid>
       <description>
 
 &lt;h1 id=&#34;hello-world:a37038ea9c0a627175646a70bd3fc060&#34;&gt;Hello World&lt;/h1&gt;
@@ -124,63 +124,6 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;It had to be .io so &lt;strong&gt;cloudway.io&lt;/strong&gt; was my new domain.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://cloudway.io/post/call_back_nodejs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cloudway.io/post/call_back_nodejs/</guid>
-      <description>
-
-&lt;p&gt;##fs.readFile(filename[, options], callback)#&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;filename String&lt;/li&gt;
-&lt;li&gt;options Object | String
-
-&lt;ul&gt;
-&lt;li&gt;encoding String | Null default = null&lt;/li&gt;
-&lt;li&gt;flag String default = &amp;lsquo;r&amp;rsquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;callback Function&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Asynchronously reads the entire contents of a file. Example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fs.readFile(&#39;/etc/passwd&#39;, function (err, data) {
-    if (err) throw err;
-    console.log(data);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;so-lets-write-a-sync-function-first:46f39fea3c841ae0b78d33fc38d15748&#34;&gt;So lets write a sync function first&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;var fs = require(&amp;quot;fs&amp;quot;);
-
-console.log(&amp;quot;Sync started&amp;quot;);
-var data = fs.readFileSync(&#39;sample.txt&#39;);
-console.log(&amp;quot;data: &amp;quot;, data.toString());
-console.log(&amp;quot;Sync ended&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now let&amp;rsquo;s convert this to an async function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function printFile(err, data) {
-    if (err) return console.log(err);
-    console.log(&amp;quot;- &amp;quot;, data.toString());
-};
-
-console.log(&amp;quot;Async started&amp;quot;);
-fs.readFile(&#39;sample.txt&#39;, printFile);
-console.log(&amp;quot;Async ended&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ok.&lt;/p&gt;
-
-&lt;p&gt;fs.readFile opens the file and when content is read if there is error it passes to the callback function as the first argument. If file is read without an error then it passes null as first argument and the data as second argument. That is why we implemented printFile function as seen.&lt;/p&gt;
 </description>
     </item>
     
