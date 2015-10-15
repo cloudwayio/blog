@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://cloudway.io/</loc>
-    <lastmod>2015-10-12T05:23:01-04:00</lastmod>
+    <lastmod>2015-10-15T06:23:01-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://cloudway.io/post/test/</loc>
+    <lastmod>2015-10-15T06:23:01-04:00</lastmod>
   </url>
   
   <url>

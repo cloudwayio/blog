@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sns on cloudway</title>
+    <link>http://cloudway.io/tags/sns/</link>
+    <description>Recent content in Sns on cloudway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Code released under the Apache 2.0 license.</copyright>
+    <lastBuildDate>Thu, 15 Oct 2015 06:23:01 -0400</lastBuildDate>
+    <atom:link href="http://cloudway.io/tags/sns/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing auto publishing</title>
+      <link>http://cloudway.io/post/test/</link>
+      <pubDate>Thu, 15 Oct 2015 06:23:01 -0400</pubDate>
+      
+      <guid>http://cloudway.io/post/test/</guid>
+      <description>&lt;p&gt;Testing automatically publishing from github to S3.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

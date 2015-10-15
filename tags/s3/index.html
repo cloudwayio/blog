@@ -9,15 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> -- cloudway</title>
+    <title>S3 -- cloudway</title>
 
+    
+    <link href="http://cloudway.io/tags/s3/index.xml" rel="alternate" type="application/rss+xml" title="cloudway" />
+    <link href="http://cloudway.io/tags/s3/index.xml" rel="feed" type="application/rss+xml" title="cloudway" />
     
 
     
-    <link href="http://localhost:1313//css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cloudway.io/css/bootstrap.min.css" rel="stylesheet">
 
     
-    <link href="http://localhost:1313//css/clean-blog.min.css" rel="stylesheet">
+    <link href="http://cloudway.io/css/clean-blog.min.css" rel="stylesheet">
 
     
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost:1313/">cloudway</a>
+                <a class="navbar-brand" href="http://cloudway.io/">cloudway</a>
             </div>
 
                        
@@ -51,11 +54,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     
                     <li>
-                        <a href="http://localhost:1313/">home</a>
+                        <a href="http://cloudway.io/">home</a>
                     </li>
                     
                     <li>
-                        <a href="http://localhost:1313/post/">Archives</a>
+                        <a href="http://cloudway.io/post/">Archives</a>
                     </li>
                     
                   </ul>
@@ -68,87 +71,41 @@
 
 
     
-    
-    <header class="intro-header" style="background-image: url('http://localhost:1313//img/post-bg.jpg')">
-    
-      <div class="container">
-        <div class="row">
-           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-             <div class="post-heading">
-               <h1></h1>
-               <h2 class="subheading"></h2>
-               <span class="meta">Posted by <a href="#">Oz Akan</a> on Mon, Jan 1, 0001
-                 <br />
-                 In 
-
-                 <br />
-                 Tags 
-
-               </span>
-             </div>
+    <header class="intro-header" style="background-image: url('http://cloudway.io/img/home-bg.jpg')">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div class="site-heading">
+             <h1>S3</h1>
+             <hr class="small">
+             <span class="subheading"></span>
            </div>
-        </div>
-      </div>
+         </div>
+       </div>
+     </div>
     </header>
 
     
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+                             <div class="post-preview">
+                  <p class="post-meta"><a href="http://cloudway.io/post/test/">Testing auto publishing</a> on Thu, Oct 15, 2015
+                    <br />
+                    In <a href="http://cloudway.io/categories/aws" >AWS</a>, <a href="http://cloudway.io/categories/technical" >Technical</a>, 
 
-<p>##fs.readFile(filename[, options], callback)#</p>
+                    Tags <a href="http://cloudway.io/tags/aws" >aws</a> <a href="http://cloudway.io/tags/lambda" >lambda</a> <a href="http://cloudway.io/tags/s3" >s3</a> <a href="http://cloudway.io/tags/cloudfront" >cloudfront</a> <a href="http://cloudway.io/tags/sns" >sns</a> 
 
-<ul>
-<li>filename String</li>
-<li>options Object | String
+                  </p>
+               </div>
 
-<ul>
-<li>encoding String | Null default = null</li>
-<li>flag String default = &lsquo;r&rsquo;</li>
-</ul></li>
-<li>callback Function</li>
-</ul>
-
-<p>Asynchronously reads the entire contents of a file. Example:</p>
-
-<pre><code>fs.readFile('/etc/passwd', function (err, data) {
-    if (err) throw err;
-    console.log(data);
-});
-</code></pre>
-
-<h2 id="so-lets-write-a-sync-function-first:46f39fea3c841ae0b78d33fc38d15748">So lets write a sync function first</h2>
-
-<pre><code>var fs = require(&quot;fs&quot;);
-
-console.log(&quot;Sync started&quot;);
-var data = fs.readFileSync('sample.txt');
-console.log(&quot;data: &quot;, data.toString());
-console.log(&quot;Sync ended&quot;);
-</code></pre>
-
-<p>Now let&rsquo;s convert this to an async function.</p>
-
-<pre><code>function printFile(err, data) {
-    if (err) return console.log(err);
-    console.log(&quot;- &quot;, data.toString());
-};
-
-console.log(&quot;Async started&quot;);
-fs.readFile('sample.txt', printFile);
-console.log(&quot;Async ended&quot;);
-</code></pre>
-
-<p>ok.</p>
-
-<p>fs.readFile opens the file and when content is read if there is error it passes to the callback function as the first argument. If file is read without an error then it passes null as first argument and the data as second argument. That is why we implemented printFile function as seen.</p>
-
-                </div>
-            </div>
+          
+          
+    
         </div>
-    </article>
+      </div>
+    </div>
 
     <hr>
     
@@ -201,13 +158,13 @@ console.log(&quot;Async ended&quot;);
     </footer>
 
     
-    <script src="http://localhost:1313//js/jquery.min.js"></script>
+    <script src="http://cloudway.io/js/jquery.min.js"></script>
 
     
-    <script src="http://localhost:1313//js/bootstrap.min.js"></script>
+    <script src="http://cloudway.io/js/bootstrap.min.js"></script>
 
     
-    <script src="http://localhost:1313//js/clean-blog.js"></script>
+    <script src="http://cloudway.io/js/clean-blog.js"></script>
 
     
 <script>
