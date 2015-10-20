@@ -7,8 +7,112 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
-    <lastBuildDate>Mon, 12 Oct 2015 05:23:01 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2015 23:23:01 -0400</lastBuildDate>
     <atom:link href="http://cloudway.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creating Certificates on Mac &amp; Linux with Expect</title>
+      <link>http://cloudway.io/post/creating-certificates-with-expect/</link>
+      <pubDate>Mon, 19 Oct 2015 23:23:01 -0400</pubDate>
+      
+      <guid>http://cloudway.io/post/creating-certificates-with-expect/</guid>
+      <description>
+
+&lt;p&gt;Let&amp;rsquo;s see how we can create a certificate to test with AWS ELB. First slow way and then cloud way.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-by-step-certificate-creation:8e3c24d09006d32d5d57d8b6ddec6ee2&#34;&gt;Step by Step Certificate Creation&lt;/h1&gt;
+
+&lt;p&gt;Create private key.
+Enter a password you can remember, at least for a few minutes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl genrsa -des3 -out server.key 2048
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create a certificate signing request.
+Enter your domain name for &amp;ldquo;Common Name&amp;rdquo;
+Don&amp;rsquo;t set a password when prompted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl req -new -key server.key -out server.csr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remove password.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp server.key server.key.org
+openssl rsa -in server.key.org -out server.key
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sign your certificate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;now-cloud-way-with-expect:8e3c24d09006d32d5d57d8b6ddec6ee2&#34;&gt;Now Cloud Way, with Expect&lt;/h1&gt;
+
+&lt;p&gt;Create a file named &lt;code&gt;keygen.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We will use &lt;a href=&#34;https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/expect.1.html&#34;&gt;expect&lt;/a&gt; in order to speed up certificate generation. Expect  is a program that &amp;ldquo;talks&amp;rdquo; to other interactive programs according to a script.&lt;/p&gt;
+
+&lt;p&gt;You may just change domain variable and it should be fine.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Contents of &lt;code&gt;keygen.sh&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/expect -f
+set domain helloworld.com
+
+spawn /usr/bin/openssl genrsa -des3 -out server.key 2048
+expect &amp;quot;Enter pass phrase for server.key:&amp;quot;
+send &amp;quot;hello\r&amp;quot;
+expect &amp;quot;Verifying - Enter pass phrase for server.key:&amp;quot;
+send &amp;quot;hello\r&amp;quot;
+expect eof
+
+spawn /usr/bin/openssl req -new -key server.key -out server.csr
+expect &amp;quot;Enter pass phrase for server.key:&amp;quot;
+send &amp;quot;hello\r&amp;quot;
+expect &amp;quot;Country Name (2 letter code)*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;State or Province Name (full name)*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;Locality Name (eg, city)*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;Organization Name (eg, company)*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;Organizational Unit Name (eg, section)*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;Common Name (e.g. server FQDN or YOUR name)*:&amp;quot;
+send &amp;quot;$domain\r&amp;quot;
+expect &amp;quot;Email Address*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;A challenge password*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect &amp;quot;An optional company name*:&amp;quot;
+send &amp;quot;\r&amp;quot;
+expect eof
+
+spawn cp server.key server.key.org
+
+spawn openssl rsa -in server.key.org -out server.key
+expect &amp;quot;Enter pass phrase for server.key.org:&amp;quot;
+send &amp;quot;hello\r&amp;quot;
+expect eof 
+
+spawn rm server.key.org
+
+spawn openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+expect eof
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make it executable and run it&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ chmod +x keygen.sh
+$./keygen.sh
+$ ls server*
+server.csr      server.key      server.key.org      server.crt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you see all file are created whitout any input. You will need &lt;code&gt;server.key&lt;/code&gt;for private key and &lt;code&gt;server.crt&lt;/code&gt; and public key certificate.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A Summary of AWS re:Invent 2015 Announcements</title>

@@ -9,11 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categories -- cloudway</title>
+    <title>Creating Certificates on Mac &amp; Linux with Expect -- cloudway</title>
 
-    
-    <link href="http://cloudway.io/categories/index.xml" rel="alternate" type="application/rss+xml" title="cloudway" />
-    <link href="http://cloudway.io/categories/index.xml" rel="feed" type="application/rss+xml" title="cloudway" />
     
 
     
@@ -71,37 +68,134 @@
 
 
     
-    <header class="intro-header" style="background-image: url('http://cloudway.io/img/home-bg.jpg')">
-     <div class="container">
-       <div class="row">
-         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-           <div class="site-heading">
-             <h1>Categories</h1>
-             <hr class="small">
-             <span class="subheading">Categories</span>
+    
+    <header class="intro-header" style="background-image: url('http://cloudway.io/img/post-bg.jpg')">
+    
+      <div class="container">
+        <div class="row">
+           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             <div class="post-heading">
+               <h1>Creating Certificates On Mac &amp; Linux With Expect</h1>
+               <h2 class="subheading">Let&#39;S See How We Can Use Expect To Create A Certificate For AWS ELB</h2>
+               <span class="meta">Posted by <a href="#">Oz Akan</a> on Mon, Oct 19, 2015
+                 <br />
+                 In <a href="http://cloudway.io/categories/aws" >AWS</a>, <a href="http://cloudway.io/categories/tips" >Tips</a>, 
+
+                 <br />
+                 Tags <a href="http://cloudway.io/tags/aws" >aws</a> <a href="http://cloudway.io/tags/certificate" >certificate</a> <a href="http://cloudway.io/tags/shell" >shell</a> 
+
+               </span>
+             </div>
            </div>
-         </div>
-       </div>
-     </div>
+        </div>
+      </div>
     </header>
 
     
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <ul>
-            
-            
-            <li><a href="http://cloudway.io/categories/aws">Aws</a> 3</li>
-            
-            <li><a href="http://cloudway.io/categories/tips">Tips</a> 1</li>
-            
-            <li><a href="http://cloudway.io/categories/go">Go</a> 1</li>
-            
-          </ul>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  
+
+<p>Let&rsquo;s see how we can create a certificate to test with AWS ELB. First slow way and then cloud way.</p>
+
+<h1 id="step-by-step-certificate-creation:8e3c24d09006d32d5d57d8b6ddec6ee2">Step by Step Certificate Creation</h1>
+
+<p>Create private key.
+Enter a password you can remember, at least for a few minutes.</p>
+
+<pre><code>openssl genrsa -des3 -out server.key 2048
+</code></pre>
+
+<p>Create a certificate signing request.
+Enter your domain name for &ldquo;Common Name&rdquo;
+Don&rsquo;t set a password when prompted.</p>
+
+<pre><code>openssl req -new -key server.key -out server.csr
+</code></pre>
+
+<p>Remove password.</p>
+
+<pre><code>cp server.key server.key.org
+openssl rsa -in server.key.org -out server.key
+</code></pre>
+
+<p>Sign your certificate.</p>
+
+<pre><code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+
+<h1 id="now-cloud-way-with-expect:8e3c24d09006d32d5d57d8b6ddec6ee2">Now Cloud Way, with Expect</h1>
+
+<p>Create a file named <code>keygen.sh</code></p>
+
+<p>We will use <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/expect.1.html">expect</a> in order to speed up certificate generation. Expect  is a program that &ldquo;talks&rdquo; to other interactive programs according to a script.</p>
+
+<p>You may just change domain variable and it should be fine.</p>
+
+<p><em>Contents of <code>keygen.sh</code></em></p>
+
+<pre><code>#!/usr/bin/expect -f
+set domain helloworld.com
+
+spawn /usr/bin/openssl genrsa -des3 -out server.key 2048
+expect &quot;Enter pass phrase for server.key:&quot;
+send &quot;hello\r&quot;
+expect &quot;Verifying - Enter pass phrase for server.key:&quot;
+send &quot;hello\r&quot;
+expect eof
+
+spawn /usr/bin/openssl req -new -key server.key -out server.csr
+expect &quot;Enter pass phrase for server.key:&quot;
+send &quot;hello\r&quot;
+expect &quot;Country Name (2 letter code)*:&quot;
+send &quot;\r&quot;
+expect &quot;State or Province Name (full name)*:&quot;
+send &quot;\r&quot;
+expect &quot;Locality Name (eg, city)*:&quot;
+send &quot;\r&quot;
+expect &quot;Organization Name (eg, company)*:&quot;
+send &quot;\r&quot;
+expect &quot;Organizational Unit Name (eg, section)*:&quot;
+send &quot;\r&quot;
+expect &quot;Common Name (e.g. server FQDN or YOUR name)*:&quot;
+send &quot;$domain\r&quot;
+expect &quot;Email Address*:&quot;
+send &quot;\r&quot;
+expect &quot;A challenge password*:&quot;
+send &quot;\r&quot;
+expect &quot;An optional company name*:&quot;
+send &quot;\r&quot;
+expect eof
+
+spawn cp server.key server.key.org
+
+spawn openssl rsa -in server.key.org -out server.key
+expect &quot;Enter pass phrase for server.key.org:&quot;
+send &quot;hello\r&quot;
+expect eof 
+
+spawn rm server.key.org
+
+spawn openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+expect eof
+</code></pre>
+
+<p>Make it executable and run it</p>
+
+<pre><code>$ chmod +x keygen.sh
+$./keygen.sh
+$ ls server*
+server.csr      server.key      server.key.org      server.crt
+</code></pre>
+
+<p>As you see all file are created whitout any input. You will need <code>server.key</code>for private key and <code>server.crt</code> and public key certificate.</p>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </article>
 
     <hr>
     
