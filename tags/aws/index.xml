@@ -57,7 +57,7 @@ openssl rsa -in server.key.org -out server.key
 &lt;p&gt;&lt;em&gt;Contents of &lt;code&gt;keygen.sh&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#!/usr/bin/expect -f
-set domain helloworld.com
+set domain helloawsworld.com
 
 spawn /usr/bin/openssl genrsa -des3 -out server.key 2048
 expect &amp;quot;Enter pass phrase for server.key:&amp;quot;
