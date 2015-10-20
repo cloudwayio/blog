@@ -110,7 +110,9 @@ $ ls server*
 server.csr      server.key      server.key.org      server.crt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;As you see all file are created whitout any input. You will need &lt;code&gt;server.key&lt;/code&gt;for private key and &lt;code&gt;server.crt&lt;/code&gt; and public key certificate.&lt;/p&gt;
+&lt;p&gt;As you see all files are created without any input so you can repeat the process many times or use to automate testing.&lt;/p&gt;
+
+&lt;p&gt;You will need &lt;code&gt;server.key&lt;/code&gt;for private key and &lt;code&gt;server.crt&lt;/code&gt; and public key certificate.&lt;/p&gt;
 </description>
     </item>
     
