@@ -7,8 +7,66 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
-    <lastBuildDate>Mon, 19 Oct 2015 23:23:01 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2015 23:23:01 -0400</lastBuildDate>
     <atom:link href="http://cloudway.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Emacs Tips and Tricks</title>
+      <link>http://cloudway.io/post/emacs-tips/</link>
+      <pubDate>Sun, 25 Oct 2015 23:23:01 -0400</pubDate>
+      
+      <guid>http://cloudway.io/post/emacs-tips/</guid>
+      <description>
+
+&lt;h1 id=&#34;emacs-configuration:77855156b5d8e27224cf8fc381d99b0d&#34;&gt;Emacs configuration&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;~/.config&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setq backup-directory-alist
+          `((&amp;quot;.*&amp;quot; . ,temporary-file-directory)))
+    (setq auto-save-file-name-transforms
+          `((&amp;quot;.*&amp;quot; ,temporary-file-directory t)))
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function &#39;insert-tab)
+
+(transient-mark-mode 1)
+
+(add-hook &#39;before-save-hook &#39;delete-trailing-whitespace)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;transient-mark-mode 1&lt;/code&gt; enables highlighting on mac.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;add-hook &#39;before-save-hook &#39;delete-trailing-whitespace&lt;/code&gt; remove trailing whitespace when document saved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;jump-to-first-non-whitespace-character-in-line:77855156b5d8e27224cf8fc381d99b0d&#34;&gt;Jump to first non-whitespace character in line&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;M-m&lt;/code&gt; or &lt;code&gt;Esc-m&lt;/code&gt; on Mac.&lt;/p&gt;
+
+&lt;p&gt;While writing code in Emacs, I have to go to the the first character in the line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var parseTrailbyEvent = function(){
+    async.each(eipEventNames, getTrailForEvent,
+               function(err, result){
+                   if (err) {
+                       console.log(&amp;quot;Error occurred&amp;quot;);
+                   } else {
+                       console.log(trailEvents);
+                   }
+               })
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since there are many indents on the lines, it is a painful to go to the beginning of the line
+and then move until the first character.&lt;/p&gt;
+
+&lt;h1 id=&#34;add-tab-to-multiple-lines:77855156b5d8e27224cf8fc381d99b0d&#34;&gt;Add tab to multiple lines&lt;/h1&gt;
+
+&lt;p&gt;Select multiply lines, then type &lt;code&gt;C-u 4 C-x Tab&lt;/code&gt;, it will indent the region by 4 spaces.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Creating Certificates on Mac &amp; Linux with Expect</title>
