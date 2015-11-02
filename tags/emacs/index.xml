@@ -65,6 +65,12 @@ and then move until the first character.&lt;/p&gt;
 &lt;h1 id=&#34;add-tab-to-multiple-lines:77855156b5d8e27224cf8fc381d99b0d&#34;&gt;Add tab to multiple lines&lt;/h1&gt;
 
 &lt;p&gt;Select multiply lines, then type &lt;code&gt;C-u 4 C-x Tab&lt;/code&gt;, it will indent the region by 4 spaces.&lt;/p&gt;
+
+&lt;h1 id=&#34;search-and-replace:77855156b5d8e27224cf8fc381d99b0d&#34;&gt;Search and replace&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;M-x replace-string Enter &amp;lt;current string&amp;gt; Enter &amp;lt;new string&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;On mac &lt;code&gt;M-x&lt;/code&gt; is &lt;code&gt;Esc-x&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
