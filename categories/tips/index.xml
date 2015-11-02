@@ -11,12 +11,12 @@
     <atom:link href="http://cloudway.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>List AWS Services that require agents</title>
+      <title>List of AWS Services that require agents</title>
       <link>http://cloudway.io/post/aws-services-with-agents/</link>
       <pubDate>Mon, 02 Nov 2015 01:23:01 -0400</pubDate>
       
       <guid>http://cloudway.io/post/aws-services-with-agents/</guid>
-      <description>&lt;p&gt;Here is the list AWS services which require agents to be installed on EC2 instances. (as of Oct, 2015)&lt;/p&gt;
+      <description>&lt;p&gt;Here is the list of AWS services which require agents to be installed on EC2 instances. (as of Oct, 2015)&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html&#34;&gt;Cloudwatch Logs&lt;/a&gt;&lt;/li&gt;
