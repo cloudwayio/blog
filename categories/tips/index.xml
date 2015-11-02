@@ -7,8 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
-    <lastBuildDate>Sun, 25 Oct 2015 23:23:01 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2015 01:23:01 -0400</lastBuildDate>
     <atom:link href="http://cloudway.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>List of AWS Services that require agents</title>
+      <link>http://cloudway.io/post/aws-services-with-agents/</link>
+      <pubDate>Mon, 02 Nov 2015 01:23:01 -0400</pubDate>
+      
+      <guid>http://cloudway.io/post/aws-services-with-agents/</guid>
+      <description>&lt;p&gt;Here is the list of AWS services which require agents to be installed on EC2 instances. (as of Oct, 2015)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html&#34;&gt;Cloudwatch Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-run-agent.html&#34;&gt;Codedeploy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/inspector/latest/userguide/inspector_agents.html&#34;&gt;Inspector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/opsworks/latest/userguide/troubleshoot-debug-cli.html&#34;&gt;Opsworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-install.html&#34;&gt;EC2 Container Service&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Emacs Tips and Tricks</title>
