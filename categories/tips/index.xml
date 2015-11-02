@@ -23,7 +23,7 @@
 &lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-run-agent.html&#34;&gt;Codedeploy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/inspector/latest/userguide/inspector_agents.html&#34;&gt;Inspector&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/opsworks/latest/userguide/troubleshoot-debug-cli.html&#34;&gt;Opsworks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-install.html&#34;&gt;Amazon EC2 Container Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-install.html&#34;&gt;EC2 Container Service&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
